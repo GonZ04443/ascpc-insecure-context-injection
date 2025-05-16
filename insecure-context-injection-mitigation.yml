@@ -18,4 +18,5 @@ jobs:
       - name: Run build 
         run: | 
           echo "Using environment variables"
-          echo "Building the project for branch: $BRANCH_NAME"
+          echo "bash version: $BRANCH_NAME"
+   
