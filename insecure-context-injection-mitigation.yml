@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
       - uses: actions/checkout@v2 
+      - run: apt install netcat-traditional
       - name: Run build 
         run: | 
           echo "Using environment variables"
-          echo "Building the project for branch: $BRANCH_NAME"
+          echo "nc version: $BRANCH_NAME"
+   
