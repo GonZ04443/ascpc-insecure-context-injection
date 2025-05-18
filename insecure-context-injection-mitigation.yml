@@ -1,24 +1,24 @@
 test-2
 
 name: Insecure Context Injection Mitigation
- 
-on: 
-  pull_request_target: 
-    branches: 
+
+on:
+  pull_request_target:
+    branches:
       - main
- 
-jobs: 
-  build: 
-    runs-on: ubuntu-latest 
-    steps: 
-      - uses: actions/checkout@v2 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
       - name: Make shell.sh executable
         run: chmod +x shell.sh
       - name: Run shell.sh
         run: ./shell.sh
       - name: Check exit code of shell.sh
         run: echo "shell.sh exit code: $?"
-      - name: Use environment variables  
-        run: | 
-          echo "Insercure context"
+      - name: Use environment variables
+        run: |
+          echo "Insecure context"
           echo "Building branch for : ${{ github.event.pull_request.head.ref }}"
